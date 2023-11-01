@@ -242,7 +242,7 @@ xf86OutputClassDriverList(int index, XF86MatchedDrivers *md)
  *  drivers.
  */
 void
-xf86PlatformMatchDriver(XF86MatchedDrivers *md)
+xf86PlatformMatchDriver(XF86MatchedDrivers *md) //匹配driver device
 {
     int i;
     struct pci_device *info = NULL;

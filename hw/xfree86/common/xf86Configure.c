@@ -532,7 +532,7 @@ static int
 is_fallback(const char *s)
 {
     /* later entries are less preferred */
-    const char *fallback[5] = { "modesetting", "fbdev", "vesa",  "wsfb", NULL };
+    const char *fallback[5] = { "modesetting", "fbdev", "vesa",  "wsfb", NULL }; //增加了默认的回调
     int i;
 
     for (i = 0; fallback[i]; i++)
@@ -609,7 +609,7 @@ DoConfigure(void)
         goto bail;
     }
 
-    ErrorF("List of video drivers:\n");
+    ErrorF("List of video drivers:\n"); //加载driver list
     for (vl = vlist; *vl; vl++)
         ErrorF("\t%s\n", *vl);
 

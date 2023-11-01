@@ -156,7 +156,7 @@ xf86LookupInput(const char *name)
 /* Allocate a new ScrnInfoRec in xf86Screens */
 
 ScrnInfoPtr
-xf86AllocateScreen(DriverPtr drv, int flags)
+xf86AllocateScreen(DriverPtr drv, int flags)   //检查显卡连接了几个屏幕 这个也很重要
 {
     int i;
     ScrnInfoPtr pScrn;

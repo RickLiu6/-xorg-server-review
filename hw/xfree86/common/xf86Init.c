@@ -421,7 +421,7 @@ InitOutput(ScreenInfo * pScreenInfo, int argc, char **argv)
                 return;
             }
         }
-        if ((modulelist = xf86DriverlistFromConfig())) {
+        if ((modulelist = xf86DriverlistFromConfig())) { //加载all of module by auto match config
             xf86LoadModules(modulelist, NULL);
             free(modulelist);
         }

@@ -189,7 +189,7 @@ static const char *stdSubdirs[] = {
  * shared libraries are named something.so.  If we're ever nuts enough
  * to port this DDX to, say, Darwin, we'll need to fix this.
  */
-static PatternRec stdPatterns[] = {
+static PatternRec stdPatterns[] = {   //动态库文件
 #ifdef __CYGWIN__
     {"^cyg(.*)\\.dll$",},
     {"(.*)_drv\\.dll$",},
@@ -665,7 +665,7 @@ static const char *compiled_in_modules[] = {
  */
 ModuleDescPtr
 LoadModule(const char *module, void *options, const XF86ModReqInfo *modreq,
-           int *errmaj)
+           int *errmaj)   //在loadModule中执行加载器loader
 {
     XF86ModuleData *initdata = NULL;
     char **pathlist = NULL;
@@ -673,7 +673,7 @@ LoadModule(const char *module, void *options, const XF86ModReqInfo *modreq,
     char *name = NULL;
     char **path_elem = NULL;
     char *p = NULL;
-    ModuleDescPtr ret = NULL;
+    ModuleDescPtr ret = NULL;  //申请一个地址存module
     PatternPtr patterns = NULL;
     int noncanonical = 0;
     char *m = NULL;

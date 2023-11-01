@@ -230,7 +230,7 @@ listPossibleVideoDrivers(XF86MatchedDrivers *md)
     md->nmatches = 0;
 
 #ifdef XSERVER_PLATFORM_BUS
-    xf86PlatformMatchDriver(md);
+    xf86PlatformMatchDriver(md);  //这里只添加dri中匹配到的device
 #endif
 #ifdef __sun
     /* Check for driver type based on /dev/fb type and if valid, use
@@ -303,7 +303,7 @@ listPossibleVideoDrivers(XF86MatchedDrivers *md)
 #if !defined(__linux__) && defined(__sparc__)
     xf86AddMatchedDriver(md, "wsfb");
 #else
-    xf86AddMatchedDriver(md, "fbdev");
+    xf86AddMatchedDriver(md, "fbdev");  //增加了默认的driver
 #endif
 #endif                          /* !__sun */
 
